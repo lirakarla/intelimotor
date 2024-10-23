@@ -21,11 +21,11 @@ export async function uploadImage(id: string, imageURL: string) {
   if (uploadHandle) {
     await uploadHandle.uploadFile(imageURL);
   }
-  await waitFor(3000);
+  await waitFor(5000);
 }
 
 export async function handleDropdownSelection(query: string, element: string) {
-  await waitFor(1000);
+  await waitFor(2000);
   await page.focus(element);
   await page.keyboard.press("Enter");
   await page.type('[type="text"]', query);

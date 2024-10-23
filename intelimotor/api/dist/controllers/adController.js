@@ -65,14 +65,14 @@ function lastPage(description) {
     return __awaiter(this, void 0, void 0, function* () {
         yield page.waitForSelector("#input_text_area_review");
         yield page.type("#input_text_area_review", description);
-        yield (0, puppeteerService_1.uploadImage)("#Uploader", "src/images/image1.jpg");
-        yield page.click('[class="next-button"]');
-        yield page.waitForNavigation({ waitUntil: "networkidle0" });
+        yield (0, puppeteerService_1.uploadImage)("#Uploader", "./src/images/acura/acura.jpg");
         yield handleScreenshot();
     });
 }
 function handleScreenshot() {
     return __awaiter(this, void 0, void 0, function* () {
+        yield page.click('[class="next-button"]');
+        yield page.waitForNavigation({ waitUntil: "networkidle0" });
         page.waitForFunction(() => window.location.href.endsWith("/plans"));
         yield (page === null || page === void 0 ? void 0 : page.screenshot({
             path: "./src/images/addPublished/screenshot_plans.png",

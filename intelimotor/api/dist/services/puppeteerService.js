@@ -40,12 +40,12 @@ function uploadImage(id, imageURL) {
         if (uploadHandle) {
             yield uploadHandle.uploadFile(imageURL);
         }
-        yield (0, helpers_1.waitFor)(3000);
+        yield (0, helpers_1.waitFor)(5000);
     });
 }
 function handleDropdownSelection(query, element) {
     return __awaiter(this, void 0, void 0, function* () {
-        yield (0, helpers_1.waitFor)(1000);
+        yield (0, helpers_1.waitFor)(2000);
         yield page.focus(element);
         yield page.keyboard.press("Enter");
         yield page.type('[type="text"]', query);
