@@ -69,11 +69,11 @@ async function lastPage(description: string) {
   await page.waitForSelector("#input_text_area_review");
   await page.type("#input_text_area_review", description);
   await uploadImage("#Uploader", "./src/images/acura/acura.jpg");
+  await page.click('[class="next-button"]');
   await handleScreenshot();
 }
 
 async function handleScreenshot(): Promise<void> {
-  await page.click('[class="next-button"]');
   await page.waitForNavigation({ waitUntil: "networkidle0" });
   page.waitForFunction(() => window.location.href.endsWith("/plans"));
 
