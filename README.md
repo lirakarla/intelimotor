@@ -1,4 +1,4 @@
-Tecnologias utilizadas 👅
+Tecnologias utilizadas 
 React
 Node JS
 Axios
