@@ -81,5 +81,5 @@ async function handleScreenshot(): Promise<void> {
     path: "./src/images/addPublished/screenshot_plans.png",
   });
 
-  await closePuppeteer();
+  //await closePuppeteer();
 }

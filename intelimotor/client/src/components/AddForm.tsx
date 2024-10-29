@@ -48,7 +48,6 @@ export default function AdForm(): React.ReactElement {
   const handlePriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     if (/^\d*\.?\d*$/.test(value)) {
-      // Regex to validate the input only accept numbers
       setPrice(value);
       setSubmitted(false);
     }
@@ -65,74 +64,80 @@ export default function AdForm(): React.ReactElement {
 
   return (
     <div className="ad-form-container">
-      <Typography variant="h4" gutterBottom>
-        Bienvenido al portal SemiNuevos
-      </Typography>
-      <Typography className="subtitle-text" gutterBottom>
-        Publica tu anuncio para vender tu vehiculo atraves de este sencillo
-        formulario.
-      </Typography>
-
-      <form onSubmit={handleSubmit}>
-        <TextField
-          label="Precio"
-          id="price"
-          variant="outlined"
-          value={price}
-          onChange={handlePriceChange}
-          fullWidth
-          margin="normal"
-          required
-          inputProps={{ inputMode: "numeric", pattern: "[0-9]*" }}
-        />
-
-        <TextField
-          label="Descripción"
-          id="description"
-          variant="outlined"
-          value={description}
-          onChange={handleDescriptionChange}
-          multiline
-          rows={4}
-          fullWidth
-          margin="normal"
-          required
-        />
-
-        <Button
-          type="submit"
-          variant="contained"
-          className="submit-button"
-          disabled={isSubmitDisabled}
-          fullWidth
-        >
-          Publicar
-        </Button>
-      </form>
-
-      {loading && (
-        <>
-          <p>Cargando Datos...</p>
-          <LoadingBar />
-        </>
-      )}
-
-      {error && (
-        <Typography color="error" className="error-message">
-          {error}
+      <div className="ad-form">
+        <Typography variant="h4" gutterBottom>
+          Bienvenido al portal SemiNuevos
         </Typography>
+        <Typography className="subtitle-text" gutterBottom>
+          Publica tu anuncio para vender tu vehiculo a través de este sencillo
+          formulario.
+        </Typography>
+
+        <form onSubmit={handleSubmit}>
+          <TextField
+            label="Precio"
+            id="price"
+            variant="outlined"
+            value={price}
+            onChange={handlePriceChange}
+            fullWidth
+            margin="normal"
+            required
+            inputProps={{ inputMode: "numeric", pattern: "[0-9]*" }}
+          />
+
+          <TextField
+            label="Descripción"
+            id="description"
+            variant="outlined"
+            value={description}
+            onChange={handleDescriptionChange}
+            multiline
+            rows={4}
+            fullWidth
+            margin="normal"
+            required
+          />
+
+          <Button
+            type="submit"
+            variant="contained"
+            className="submit-button"
+            disabled={isSubmitDisabled}
+            fullWidth
+          >
+            Publicar
+          </Button>
+        </form>
+
+        {loading && (
+          <>
+            <p>Cargando Datos...</p>
+            <LoadingBar />
+          </>
+        )}
+
+        {error && (
+          <Typography color="error" className="error-message">
+            {error}
+          </Typography>
+        )}
+
+        <Snackbar
+          open={notificationOpen}
+          autoHideDuration={4000}
+          onClose={handleCloseSnackbar}
+          message={notificationMessage}
+          className="ad-notification"
+          anchorOrigin={{ vertical: "top", horizontal: "right" }}
+        />
+      </div>
+
+      {screenshot && (
+        <div className="screenshot-container">
+          <Screenshot screenshot={screenshot} />
+        </div>
       )}
-
-      {screenshot && <Screenshot screenshot={screenshot} />}
-
-      <Snackbar
-        open={notificationOpen}
-        autoHideDuration={4000}
-        onClose={handleCloseSnackbar}
-        message={notificationMessage}
-        className="ad-notification"
-        anchorOrigin={{ vertical: "top", horizontal: "right" }}
-      />
     </div>
   );
 }

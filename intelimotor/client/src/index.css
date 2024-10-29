@@ -15,3 +15,7 @@ code {
 .wrapper {
   margin-top: 1.4rem;
 }
+
+:focus-visible {
+  outline: rgb(218, 206, 206) auto 1px;
+}

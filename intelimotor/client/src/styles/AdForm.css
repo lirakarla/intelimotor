@@ -1,7 +1,12 @@
 .ad-form-container {
   padding: 20px;
-  max-width: 600px;
-  margin: 0 auto;
+  margin: 2rem 6rem;
+  background: #f3f4f6;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 6rem;
+  align-items: flex-start;
 }
 
 .error-message {
@@ -35,4 +40,12 @@ div.MuiSnackbarContent-root {
 
 span.MuiLinearProgress-bar {
   background-color: #e0252d;
+}
+
+.ad-form {
+  flex: 1;
+}
+
+.screenshot-container {
+  flex: 1;
 }
