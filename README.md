@@ -2,7 +2,7 @@
 - [React](https://reactjs.org/)
 - [Tailwind](https://tailwindcss.com/)
 - [Axios](https://github.com/axios/axios)
-- [ReactToastify](https://fkhadra.github.io/react-toastify/)
+- [puppeteer]([https://fkhadra.github.io/react-toastify/](https://pptr.dev/guides/getting-started))
 
 
 ## Important to install
@@ -18,4 +18,10 @@
     * npm start
    
 * WebApp
+   * Home page
+![image](https://github.com/user-attachments/assets/5415cccd-ad09-4dbe-b9c7-625ab626c625)
+
+   *After ad has been published
+![image](https://github.com/user-attachments/assets/40e35fa7-d260-4064-9e6e-8305bebcc815)
+
 
